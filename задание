@@ -1,3 +1,6 @@
-df = pd.read_csv('/Customers.csv', delimiter=';')
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('/content/Customers.csv', delimiter=';')
 A = df[(df['Age'] > 30) & (df['Income'] < 30000)] # находим юдей, у которых возраст больше 30 и доход меньше 30000
-B = [(df['Profession'] == 'Lawyer	') & (df['Work Experience'] > 5)] # находим людей, которые по профессии юристы и с опытом работы больше 5 лет
+B = df[(df['Profession'] == 'Lawyer') & (df['Work Experience'] > 5)] # находим людей, которые по профессии юристы и с опытом работы больше 5 лет
